@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Filament\Resources\SiteVisitResource\Pages;
+
+use App\Filament\Resources\SiteVisitResource;
+use Filament\Actions;
+use Filament\Resources\Pages\EditRecord;
+
+class EditSiteVisit extends EditRecord
+{
+    protected static string $resource = SiteVisitResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\ViewAction::make(),
+            Actions\DeleteAction::make(),
+        ];
+    }
+}
