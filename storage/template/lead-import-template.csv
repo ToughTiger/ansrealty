@@ -1,0 +1,4 @@
+full_name,mobile,email,alternate_mobile,budget_min,budget_max,preferred_locations,property_types,purchase_intent,priority,lead_source,lead_status,assigned_agent_email,notes,remarks
+Rahul Sharma,9876543210,rahul@example.com,,5000000,8000000,"Andheri,Bandra","Flat,Villa",Buy,Hot,Facebook Ads,New,agent@ansrealty.com,Looking for 2BHK,Follow up in 2 days
+Priya Patel,9876543211,priya@example.com,9876543212,3000000,5000000,Powai,Flat,Rent,Warm,Google Ads,Contacted,,Needs rental property,
+Amit Kumar,9876543213,,,10000000,15000000,"Juhu,Versova",Villa,Invest,Cold,Cold Call,New,,Investment inquiry,Long term investor

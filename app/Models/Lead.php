@@ -27,6 +27,7 @@ class Lead extends Model
         'lead_source_id',
         'lead_status_id',
         'assigned_to',
+        'agent_id',
         'priority',
         'notes',
         'remarks',
@@ -73,6 +74,11 @@ class Lead extends Model
     public function assignedAgent(): BelongsTo
     {
         return $this->belongsTo(User::class, 'assigned_to');
+    }
+
+    public function agent(): BelongsTo
+    {
+        return $this->belongsTo(Agent::class, 'agent_id');
     }
 
     public function opportunities(): HasMany

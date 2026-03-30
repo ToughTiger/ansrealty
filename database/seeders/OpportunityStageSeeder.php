@@ -25,10 +25,13 @@ class OpportunityStageSeeder extends Seeder
         ];
 
         foreach ($stages as $stage) {
-            DB::table('opportunity_stages')->insert(array_merge($stage, [
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]));
+            DB::table('opportunity_stages')->updateOrInsert(
+                ['slug' => $stage['slug']], // Match on slug
+                array_merge($stage, [
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ])
+            );
         }
     }
 }

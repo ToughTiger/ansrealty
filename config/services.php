@@ -35,4 +35,26 @@ return [
         ],
     ],
 
+    'meta' => [
+        'webhook_verify_token' => env('META_WEBHOOK_VERIFY_TOKEN', 'ansrealty_webhook_token'),
+    ],
+
+    'whatsapp' => [
+        'api_url' => env('WHATSAPP_API_URL', 'https://api.whatsapp.com/v1'),
+        'api_key' => env('WHATSAPP_API_KEY'),
+        'from_number' => env('WHATSAPP_FROM_NUMBER'),
+    ],
+
+    'sms' => [
+        'api_url' => env('SMS_API_URL', 'https://www.fast2sms.com/dev/bulkV2'),
+        'api_key' => env('SMS_API_KEY'),
+        'sender_id' => env('SMS_SENDER_ID', 'ANSRLT'),
+    ],
+
+    'twilio' => [
+        'sid' => env('TWILIO_SID'),
+        'token' => env('TWILIO_TOKEN'),
+        'from' => env('TWILIO_FROM_NUMBER'),
+    ],
+
 ];

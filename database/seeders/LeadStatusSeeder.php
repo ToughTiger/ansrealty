@@ -22,10 +22,13 @@ class LeadStatusSeeder extends Seeder
         ];
 
         foreach ($statuses as $status) {
-            DB::table('lead_statuses')->insert(array_merge($status, [
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]));
+            DB::table('lead_statuses')->updateOrInsert(
+                ['slug' => $status['slug']], // Match on slug
+                array_merge($status, [
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ])
+            );
         }
     }
 }

@@ -23,10 +23,13 @@ class LeadSourceSeeder extends Seeder
         ];
 
         foreach ($sources as $source) {
-            DB::table('lead_sources')->insert(array_merge($source, [
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]));
+            DB::table('lead_sources')->updateOrInsert(
+                ['slug' => $source['slug']], // Match on slug
+                array_merge($source, [
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ])
+            );
         }
     }
 }

@@ -731,15 +731,15 @@
                     <ul class="space-y-4 text-gray-400">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-purple-600 mt-1 mr-3"></i>
-                            <span>Office 401, Palm Tower, Bandra West, Mumbai - 400050</span>
+                            <span>C-304, Parmeshwaram, Kalyan East, Mumbai - 421306</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone text-purple-600 mr-3"></i>
-                            <a href="tel:+919876543210" class="hover:text-purple-400 transition">+91 98765 43210</a>
+                            <a href="tel:+919876543210" class="hover:text-purple-400 transition">+91 94227 99527</a>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope text-purple-600 mr-3"></i>
-                            <a href="mailto:info@ansrealty.com" class="hover:text-purple-400 transition">info@ansrealty.com</a>
+                            <a href="mailto:info@ansrealty.com" class="hover:text-purple-400 transition">info@ansrealtycorp.com</a>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-clock text-purple-600 mt-1 mr-3"></i>

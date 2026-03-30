@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('opportunities', function (Blueprint $table) {
             $table->id();
-            $table->string('opportunity_number')->unique();
+            $table->string('opportunity_number')->unique()->nullable();
             $table->foreignId('lead_id')->constrained()->cascadeOnDelete();
             $table->foreignId('assigned_to')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('opportunity_stage_id')->nullable()->constrained()->nullOnDelete();

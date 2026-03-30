@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
@@ -19,6 +20,7 @@ class Opportunity extends Model
         'opportunity_number',
         'lead_id',
         'assigned_to',
+        'agent_id',
         'opportunity_stage_id',
         'title',
         'description',
@@ -48,11 +50,13 @@ class Opportunity extends Model
             ->dontSubmitEmptyLogs();
     }
 
-    protected static function booted()
+    protected static function boot()
     {
+        parent::boot();
+        
         static::creating(function ($opportunity) {
             if (!$opportunity->opportunity_number) {
-                $opportunity->opportunity_number = 'OPP-' . str_pad(
+                $opportunity->opportunity_number = 'ANR-OPP-' . str_pad(
                     static::withTrashed()->max('id') + 1,
                     6,
                     '0',
@@ -75,6 +79,11 @@ class Opportunity extends Model
     public function assignedAgent(): BelongsTo
     {
         return $this->belongsTo(User::class, 'assigned_to');
+    }
+
+    public function agent(): BelongsTo
+    {
+        return $this->belongsTo(Agent::class, 'agent_id');
     }
 
     public function properties(): BelongsToMany
@@ -112,6 +121,11 @@ class Opportunity extends Model
     public function postSale(): HasMany
     {
         return $this->hasMany(PostSale::class);
+    }
+
+    public function booking(): HasOne
+    {
+        return $this->hasOne(Booking::class);
     }
 
     // Scopes
